@@ -1,0 +1,13 @@
+ja:
+  admini:
+    header:
+      title: 管理画面
+      menu: メニュー
+      logout: ログアウト
+    link:
+      index: 一覧
+      new: 作成
+      edit: 編集
+      show: 表示
+      delete: 削除
+    confirm: 本当によろしいですか？

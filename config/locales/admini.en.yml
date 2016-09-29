@@ -1,0 +1,13 @@
+en:
+  admini:
+    header:
+      title: Admin
+      menu: Menu
+      logout: Logout
+    link:
+      index: Index
+      new: New
+      edit: Edit
+      show: Show
+      delete: Delete
+    confirm: Are you sure?

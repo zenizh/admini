@@ -1,0 +1,13 @@
+<div class="container">
+  <%= simple_form_for resource_object do |f| %>
+    <% send("#{action_name}_attributes").each do |attribute| %>
+      <% case %>
+      <% when attribute.in?(enum_attributes) %>
+        <%= f.input attribute, collection: @resource.class.send(attribute.to_s.pluralize).keys %>
+      <% else %>
+        <%= f.input attribute %>
+      <% end %>
+    <% end %>
+    <%= f.submit %>
+  <% end %>
+</div>

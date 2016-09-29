@@ -1,0 +1,11 @@
+<div class="nav">
+  <div class="container">
+    <%= render 'admini/shared/links/index' %>
+    <%= render 'admini/shared/links/new' %>
+    <% if action_name.in?(%w(show edit update)) %>
+      <%= render partial: 'admini/shared/links/show', locals: { resource: @resource } %>
+      <%= render partial: 'admini/shared/links/edit', locals: { resource: @resource } %>
+      <%= render partial: 'admini/shared/links/delete', locals: { resource: @resource } %>
+    <% end %>
+  </div>
+</div>

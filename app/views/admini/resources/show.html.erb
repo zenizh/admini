@@ -1,0 +1,10 @@
+<div class="container">
+  <table>
+    <% show_attributes.each do |attribute| %>
+      <tr>
+        <th><%= t("activerecord.attributes.#{resource_name}.#{attribute}") %></th>
+        <td><%= render_attribute(@resource, attribute) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

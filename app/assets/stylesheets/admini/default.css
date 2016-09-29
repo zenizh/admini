@@ -1,0 +1,81 @@
+html {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+body {
+  margin: 0;
+  color: #333;
+}
+
+a {
+  color: #00c;
+}
+
+.container {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.right {
+  float: right;
+}
+
+.header {
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.header-title {
+  color: #333;
+  text-decoration: none;
+}
+
+.nav {
+  margin-bottom: 8px;
+}
+
+table {
+  margin-bottom: 12px;
+  border-collapse: collapse;
+  font-size: .9rem;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  white-space: nowrap;
+}
+
+.input {
+  margin-bottom: 8px;
+}
+
+label {
+  display: block;
+  margin-bottom: 2px;
+  font-size: .9rem;
+  font-weight: bold;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=url],
+textarea {
+  padding: 8px;
+  width: 50%;
+  min-width: 480px;
+  border: 1px solid #eee;
+}
+
+textarea {
+  height: 160px;
+}

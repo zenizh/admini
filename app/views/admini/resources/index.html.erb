@@ -1,0 +1,23 @@
+<div class="container">
+  <table>
+    <tr>
+      <% index_attributes.each do |attribute| %>
+        <th><%= t("activerecord.attributes.#{resource_name}.#{attribute}") %></th>
+      <% end %>
+      <th></th>
+    </tr>
+    <% @resources.each do |resource| %>
+      <tr>
+        <% index_attributes.each do |attribute| %>
+          <td><%= render_attribute(resource, attribute) %></td>
+        <% end %>
+        <td>
+          <%= render partial: 'admini/shared/links/show', locals: { resource: resource } %>
+          <%= render partial: 'admini/shared/links/edit', locals: { resource: resource } %>
+          <%= render partial: 'admini/shared/links/delete', locals: { resource: resource } %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <%= paginate(@resources) %>
+</div>

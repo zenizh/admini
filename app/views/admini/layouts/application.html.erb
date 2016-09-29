@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admini</title>
+    <%= stylesheet_link_tag 'admini/application' %>
+    <%= javascript_include_tag 'admini/application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= render 'admini/layouts/header' %>
+    <%= render 'admini/layouts/nav' %>
+    <%= yield %>
+  </body>
+</html>
