@@ -1,1 +1,1 @@
-<% if enable_action?(:destroy) && can_delete? %><%= link_to t('admini.link.delete'), { action: :destroy, id: resource.id }, method: :delete, data: { confirm: t('admini.confirm') } %><% end %>
+<% if enable_action?(:destroy) && can_delete? %><%= link_to t('admini.action.delete'), { action: :destroy, id: resource.id }, method: :delete, data: { confirm: t('admini.confirm') } %><% end %>

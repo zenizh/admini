@@ -1,14 +1,13 @@
 en:
   admini:
-    header:
-      title: Admin
-      menu: Menu
-      logout: Logout
-    link:
+    confirm: Are you sure?
+    logout: Logout
+    menu: Menu
+    search: Search
+    title: Admin
+    action:
       index: Index
       new: New
       edit: Edit
       show: Show
       delete: Delete
-    confirm: Are you sure?
-    search: Search
