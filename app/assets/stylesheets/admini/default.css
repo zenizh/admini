@@ -21,6 +21,17 @@ a {
   float: right;
 }
 
+.clearfix:before {
+  display: table;
+  content: '';
+}
+
+.clearfix:after {
+  clear: both;
+  display: table;
+  content: '';
+}
+
 .header {
   margin-bottom: 20px;
   padding-top: 20px;
@@ -73,9 +84,22 @@ textarea {
   padding: 8px;
   width: 50%;
   min-width: 480px;
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  vertical-align: middle;
+}
+
+input[type=search] {
+  padding: 2px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+  vertical-align: middle;
 }
 
 textarea {
   height: 160px;
+}
+
+select {
+  vertical-align: middle;
 }

@@ -1,0 +1,7 @@
+<% unless search_attributes.blank? %>
+  <%= form_tag({ action: :index }, method: :get) do %>
+    <%= search_field_tag :value %>
+    <%= select_tag :attribute, search_options %>
+    <%= submit_tag t('admini.search') %>
+  <% end %>
+<% end %>

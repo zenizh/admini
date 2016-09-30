@@ -4,10 +4,13 @@ module Admini
   module Resources
     extend ActiveSupport::Concern
 
+    include ActionView::Helpers::FormOptionsHelper
+
     included do
       before_action :load_resources, only: :index
       before_action :load_resource, only: [:edit, :update, :show, :destroy]
       before_action :build_resource, only: [:new, :create]
+      before_action :search_resources, only: :index
       before_action :authorize
 
       helper_method :resource_name,
@@ -15,6 +18,7 @@ module Admini
         :new_attributes,
         :edit_attributes,
         :show_attributes,
+        :search_attributes,
         :enum_attributes,
         :can_create?,
         :can_read?,
@@ -22,12 +26,16 @@ module Admini
         :can_delete?,
         :enable_action?,
         :render_attribute,
-        :resource_object
+        :resource_object,
+        :search_options
 
       layout 'admini/layouts/application'
     end
 
     def index
+      @resources = @resources.order(id: :desc)
+        .page(params[:page])
+        .per(paginates_per)
     end
 
     def new
@@ -71,9 +79,7 @@ module Admini
     end
 
     def resources
-      @resources ||= resource_class.order(id: :desc)
-        .page(params[:page])
-        .per(paginates_per)
+      @resources ||= resource_class.all
     end
     alias_method :load_resources, :resources
 
@@ -101,6 +107,13 @@ module Admini
       params.require(resource_name).permit(attributes)
     end
 
+    def search_resources
+      unless search_attributes.include?(params[:attribute].try(:to_sym))
+        return
+      end
+      @resources = @resources.where("#{params[:attribute]} LIKE ?", "%#{params[:value]}%")
+    end
+
     def index_attributes
       %i(id created_at updated_at)
     end
@@ -115,6 +128,10 @@ module Admini
 
     def edit_attributes
       new_attributes
+    end
+
+    def search_attributes
+      %i()
     end
 
     def enum_attributes
@@ -186,6 +203,14 @@ module Admini
       else
         resource.send(attribute)
       end
+    end
+
+    def search_options
+      options = []
+      search_attributes.each do |attribute|
+        options << [t("activerecord.attributes.#{resource_name}.#{attribute}"), attribute]
+      end
+      options_for_select(options)
     end
 
     def paginates_per
