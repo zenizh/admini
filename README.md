@@ -7,7 +7,10 @@ Admini is a minimal administration framework for Ruby on Rails application.
 The core feature is just provides CRUD actions as Active Support's Concern module.
 So you can implement administration page as usual.
 
-**Note** Admini is still under development, and there may be breaking changes to the API.
+Admini solves the same problem as [ActiveAdmin](https://github.com/activeadmin/activeadmin), [RailsAdmin](https://github.com/sferik/rails_admin) and [Administrate](https://github.com/thoughtbot/administrate).
+Admini is the simplest framework, so you can create administration page according to the Rails way.
+
+**Note**: Admini is still under development, and there may be breaking changes to the API.
 
 ## Table of contents
 
