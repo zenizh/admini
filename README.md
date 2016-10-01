@@ -247,7 +247,6 @@ end
 
 Admini doesn't apply any styles to administration pages by default.
 Because Admini should be minimal.
-
 If you want to apply basic style created by Admini, you should require the stylesheet.
 
 `app/assets/stylesheets/admini/application.css`:
@@ -285,7 +284,6 @@ Examples:
 ### Override specify view
 
 The view has rendered with a [common views](https://github.com/kami-zh/admini/tree/master/app/views/admini).
-
 If you want to implement original views, you should place your own views according to Rails convention.
 
 For example, to customize the view of `admin/posts#show`, you should create `app/views/admin/posts/show.html.erb`.
