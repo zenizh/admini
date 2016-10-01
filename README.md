@@ -12,6 +12,8 @@ Admini is the simplest framework, so you can create administration page accordin
 
 **Note**: Admini is still under development, and there may be breaking changes to the API.
 
+![](https://raw.githubusercontent.com/kami-zh/admini/master/docs/screenshot.png)
+
 ## Table of contents
 
 - [Demo](#demo)
