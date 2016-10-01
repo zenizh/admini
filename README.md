@@ -39,9 +39,9 @@ Admini is the simplest framework, so you can create administration page accordin
 ## Demo
 
 You can try an administration page built with Admini at following link.
-The code of the demo can be found [here]().
+The code of the demo can be found [here](https://github.com/kami-zh/admini-demo).
 
-- http://example.com
+- https://admini.herokuapp.com/admin
 
 ## Installation
 
