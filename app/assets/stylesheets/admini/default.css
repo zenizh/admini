@@ -103,3 +103,7 @@ textarea {
 select {
   vertical-align: middle;
 }
+
+.pagination {
+  margin-bottom: 20px;
+}
