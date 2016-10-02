@@ -208,7 +208,7 @@ module Admini
     def search_options
       options = []
       search_attributes.each do |attribute|
-        options << [t("activerecord.attributes.#{resource_name}.#{attribute}"), attribute]
+        options << [t("activerecord.attributes.#{resource_name}.#{attribute}", default: attribute.to_s.camelize), attribute]
       end
       options_for_select(options)
     end
