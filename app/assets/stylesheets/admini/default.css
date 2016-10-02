@@ -104,6 +104,13 @@ select {
   vertical-align: middle;
 }
 
+.error {
+  display: block;
+  margin-top: 4px;
+  color: #e00;
+  font-size: .8rem;
+}
+
 .pagination {
   margin-bottom: 20px;
 }

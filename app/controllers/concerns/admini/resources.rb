@@ -15,7 +15,9 @@ module Admini
 
       helper_method :index_attributes,
         :new_attributes,
+        :create_attributes,
         :edit_attributes,
+        :update_attributes,
         :show_attributes,
         :search_attributes,
         :enum_attributes,
@@ -124,8 +126,16 @@ module Admini
       %i()
     end
 
+    def create_attributes
+      new_attributes
+    end
+
     def edit_attributes
       new_attributes
+    end
+
+    def update_attributes
+      edit_attributes
     end
 
     def search_attributes
