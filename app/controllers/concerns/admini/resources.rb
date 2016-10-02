@@ -13,8 +13,7 @@ module Admini
       before_action :search_resources, only: :index
       before_action :authorize
 
-      helper_method :resource_name,
-        :index_attributes,
+      helper_method :index_attributes,
         :new_attributes,
         :edit_attributes,
         :show_attributes,
@@ -24,10 +23,9 @@ module Admini
         :can_read?,
         :can_update?,
         :can_delete?,
-        :enable_action?,
         :render_attribute,
-        :resource_object,
-        :search_options
+        :resource_name,
+        :resource_object
 
       layout 'admini/layouts/application'
     end
@@ -181,18 +179,6 @@ module Admini
       end
     end
 
-    def enable_action?(action)
-      routes.include?(controller: controller_path, action: action.to_s)
-    end
-
-    def routes
-      @routes ||= Rails.application
-        .routes
-        .routes
-        .map(&:defaults)
-        .reject(&:blank?)
-    end
-
     def resource_object
       defined?(super) ? super : [:admin, @resource]
     end
@@ -203,14 +189,6 @@ module Admini
       else
         resource.send(attribute)
       end
-    end
-
-    def search_options
-      options = []
-      search_attributes.each do |attribute|
-        options << [t("activerecord.attributes.#{resource_name}.#{attribute}", default: attribute.to_s.camelize), attribute]
-      end
-      options_for_select(options)
     end
 
     def paginates_per
