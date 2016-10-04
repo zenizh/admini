@@ -140,7 +140,6 @@ Here is an example that renders a title with link to post instead of just title.
 ```ruby
 class Admin::PostsController < Admin::ApplicationController
   include Admini::Resources
-  include ActionView::Helpers::UrlHelper
 
   private
 
@@ -151,7 +150,7 @@ class Admin::PostsController < Admin::ApplicationController
            else
              post_path(resource)
            end
-    link_to resource.title, path
+    view_context.link_to resource.title, path
   end
 end
 ```
