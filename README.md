@@ -1,5 +1,6 @@
 # Admini
 
+[![Build Status](https://travis-ci.org/kami-zh/admini.svg?branch=master)](https://travis-ci.org/kami-zh/admini)
 [![Gem Version](https://badge.fury.io/rb/admini.svg)](https://badge.fury.io/rb/admini)
 
 Admini is a minimal administration framework for Ruby on Rails application.
