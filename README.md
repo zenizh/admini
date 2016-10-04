@@ -331,11 +331,6 @@ class Admin::ApplicationController < ActionController::Base
 end
 ```
 
-## ToDo
-
-- [ ] Add spec
-- [ ] Improve README (Because I'm not good at English :no_good:)
-
 ## Need help?
 
 Feel free to ask me in [Issues](https://github.com/kami-zh/admini/issues) or [author's twitter](https://twitter.com/kami_zh).
