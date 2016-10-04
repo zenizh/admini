@@ -1,5 +1,9 @@
 module Admini
   module ApplicationHelper
+    include ActionView::Helpers::TranslationHelper
+    include ActionView::Helpers::FormOptionsHelper
+    include ActiveSupport::Multibyte::Unicode
+
     def enable_action?(action)
       routes.include?(controller: controller_path, action: action.to_s)
     end

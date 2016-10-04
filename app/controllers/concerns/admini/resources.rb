@@ -4,8 +4,6 @@ module Admini
   module Resources
     extend ActiveSupport::Concern
 
-    include ActionView::Helpers::FormOptionsHelper
-
     included do
       before_action :load_resources, only: :index
       before_action :load_resource, only: [:edit, :update, :show, :destroy]
@@ -98,13 +96,7 @@ module Admini
     end
 
     def resource_params
-      attributes = case action_name
-                   when 'create'
-                     new_attributes
-                   when 'update'
-                     edit_attributes
-                   end
-      params.require(resource_name).permit(attributes)
+      params.require(resource_name).permit(send("#{action_name}_attributes"))
     end
 
     def search_resources
@@ -190,7 +182,7 @@ module Admini
     end
 
     def resource_object
-      defined?(super) ? super : [:admin, @resource]
+      defined?(super) ? super : [:admin, resource]
     end
 
     def render_attribute(resource, attribute)
