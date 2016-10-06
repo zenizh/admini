@@ -103,7 +103,7 @@ module Admini
       unless search_attributes.include?(params[:attribute].try(:to_sym))
         return
       end
-      @resources = @resources.where("#{params[:attribute]} LIKE ?", "%#{params[:value]}%")
+      @resources = @resources.where("LOWER(#{params[:attribute]}) LIKE ?", "%#{params[:value].downcase}%")
     end
 
     def index_attributes
