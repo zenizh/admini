@@ -2,9 +2,12 @@ language: ruby
 rvm:
   - 2.0.0
   - 2.2.2
+gemfile:
+  - gemfiles/Gemfile.ruby-2.0.0
+  - gemfiles/Gemfile.ruby-2.2.2
 matrix:
-  include:
+  exclude:
     - rvm: 2.0.0
-      gemfile: gemfiles/Gemfile.ruby-2.0.0
-    - rvm: 2.2.2
       gemfile: gemfiles/Gemfile.ruby-2.2.2
+    - rvm: 2.2.2
+      gemfile: gemfiles/Gemfile.ruby-2.0.0

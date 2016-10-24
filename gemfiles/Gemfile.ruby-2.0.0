@@ -1,2 +1,4 @@
+source 'https://rubygems.org'
+
 gem 'actionview', '>= 4.0.0, < 5.0.0'
 gem 'activesupport', '>= 4.0.0, < 5.0.0'
